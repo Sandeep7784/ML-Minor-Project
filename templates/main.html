@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking for Fraudster's</title>
+</head>
+<body>
+    <h1>Healthcare Django Application</h1>
+    <hr>
+    {% if result %}
+        <h1>Class you're trying to classify is {{result}}</h1>
+    {% endif %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        input1 : <input type="number" name="input1" required><br>
+        input2 : <input type="number" name="input2" required><br>
+        input3 : <input type="number" name="input3" required><br>
+        input4 : <input type="number" name="input4" required><br>
+        input5 : <input type="number" name="input5" required><br>
+        input6 : <input type="number" name="input6" required><br>
+        input7 : <input type="number" name="input7" required><br>
+<!-- 
+        Sepal Length : <input type="number" name="sepal_length" required><br>
+        Sepal Width : <input type="number" name="sepal_width" required><br>
+        Petal Length : <input type="number" name="petal_length" required><br>
+        Petal Width : <input type="number" name="petal_width" required><br> -->
+        <input type="submit">
+    </form>
+</body>
+</html>
