@@ -1,87 +1,128 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
-
 body {
-	font-family: Montserrat,Arial, Helvetica, sans-serif;
-	background-color:#f7f7f7;
+  background-color: #f7f9fc;
+  color: #333;
+  font-family: Arial, sans-serif;
 }
-* {box-sizing: border-box}
 
-/* Add padding to container elements */
-.container {
-	background-color:#f7f7f7;
-    padding: 20px;
-    width:500px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border:1px solid #ccc;
-    border-radius:10px;
-    -webkit-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
-    -moz-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
-    box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
-  }
+header {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+  
+.header-content {
+max-width: 750px;
+margin: 0 auto;
+padding: 2rem;
+text-align: center;
+}
+  
+.header-content h1 {
+margin-top: 0;
+font-size: 3rem;
+color: #333;
+}
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
+.header-content p {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+  
+form {
+  margin-top: 2rem !important;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+input[type="number"] {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
   width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f7f7f7;
-	font-family: Montserrat,Arial, Helvetica, sans-serif;
-}
-select {
-  width: 18%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f7f7f7;
-	font-family: Montserrat,Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+  background-color: #f7f9fc;
+  transition: border-color 0.3s ease-in-out;
 }
 
-input[type=phone] {
-  width: 81%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f7f7f7;
-}
-
-input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, select:focus {
-  background-color: #ddd;
+input[type="number"]:focus {
   outline: none;
+  border-color: #5a5af3;
 }
 
-
-
-/* Set a style for all buttons */
-button {
-  background-color: #0eb7f4 !important;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  font-size:16px;
-  font-family: Montserrat,Arial, Helvetica, sans-serif;
-  border-radius:10px;
+input[type="submit"] {
+    background-color: #5a5af3;
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 1rem;
+    width: 150px;
+    height: 50px;
+  }
+  
+input[type="submit"]:hover {
+    background-color: #3945ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
-  opacity:1;
-}
+.result-container {
+    max-width: 960px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result-container h2 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .result-p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
 
+  .fraudulent {
+    color: #f44336;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .not-fraudulent {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
-/* Change styles for signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .signupbtn {
-     width: 100%;
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
   }
 }
-

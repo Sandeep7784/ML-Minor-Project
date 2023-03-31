@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checking for Fraudster's</title>
+    <link href="{% static 'css/form_style.css' %}" rel="stylesheet">
+
+
 </head>
 <body>
-    <h1>Healthcare Django Application</h1>
-    <hr>
-    {% if result %}
-        <h1>Class you're trying to classify is {{result}}</h1>
-    {% endif %}
+    <header>
+      <div class="header-content">
+        <h1>Healthcare Fraud Detection App</h1>
+        <p>Check if a healthcare claim is fraudulent using machine learning</p>
+      </div>
+    </header>
 
-    <form action="" method="POST">
+    <main>
+        {% if result %}
+          <div class="result-container">
+            <h2>Result</h2>
+            {% if result == "Fraud" %}
+              <!-- <p class="fraudulent">{{ result }}</p> -->
+              <p class="result-p">Class you're trying to classify is</p>
+              <p class="not-fraudulent">Fraudulent</p>
+            {% else %}
+                <p class="result-p">Class you're trying to classify is</p>
+                <p class="not-fraudulent">Not Fraudulent</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      <form action="" method="POST">
         {% csrf_token %}
-        input1 : <input type="number" name="input1" required><br>
-        input2 : <input type="number" name="input2" required><br>
-        input3 : <input type="number" name="input3" required><br>
-        input4 : <input type="number" name="input4" required><br>
-        input5 : <input type="number" name="input5" required><br>
-        input6 : <input type="number" name="input6" required><br>
-        input7 : <input type="number" name="input7" required><br>
-<!-- 
-        Sepal Length : <input type="number" name="sepal_length" required><br>
-        Sepal Width : <input type="number" name="sepal_width" required><br>
-        Petal Length : <input type="number" name="petal_length" required><br>
-        Petal Width : <input type="number" name="petal_width" required><br> -->
-        <input type="submit">
-    </form>
+        <label for="input1">Number of Services:</label>
+        <input type="number" name="input1" id="input1" required>
+
+        <label for="input2">Number of Medicare Beneficiaries:</label>
+        <input type="number" name="input2" id="input2" required>
+
+        <label for="input3">Number of Distinct Medicare Beneficiary Per Day Services:</label>
+        <input type="number" name="input3" id="input3" required>
+
+        <label for="input4">Average Medicare Allowed Amount:</label>
+        <input type="number" name="input4" id="input4" required>
+
+        <label for="input5">Average Submitted Charge Amount:</label>
+        <input type="number" name="input5" id="input5" required>
+
+        <label for="input6">Average Medicare Payment Amount:</label>
+        <input type="number" name="input6" id="input6" required>
+
+        <label for="input7">Average Medicare Standardized Amount:</label>
+        <input type="number" name="input7" id="input7" required>
+
+        <input type="submit" value="Check">
+      </form>
+
+    </main>
 </body>
 </html>
