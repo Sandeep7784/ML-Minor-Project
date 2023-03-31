@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.preprocessing import StandardScaler
 
 from joblib import load
-model = load('./savedModels/model.joblib')
+model = load('./savedModels/model_rishav.joblib')
 
 def predictor(request):
     if request.method == 'POST':
@@ -14,7 +16,17 @@ def predictor(request):
         input7 = request.POST['input7']
         input8 = float(input5) - float(input4)
         input8 = str(input8)
-        y_pred = model.predict([[input1, input2, input3, input4, input5, input6, input7, input8]])
+
+        l=[[input1, input2, input3, input4, input5, input6, input7, input8]]
+
+        encoder = OrdinalEncoder()
+        encoded_data = encoder.fit_transform(l)
+
+        scaler = StandardScaler()
+        df_scaled = scaler.fit_transform(encoded_data)
+
+        y_pred = model.predict(df_scaled)
+
 
         print('y_pred:', y_pred)
         if y_pred[0] == 0:
