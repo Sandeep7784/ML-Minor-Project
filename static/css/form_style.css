@@ -97,11 +97,6 @@ input[type="submit"]:hover {
     font-size: 2rem;
     color: #333;
   }
-  
-  .result-p {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-  }
 
   .fraudulent {
     color: #f44336;
@@ -125,4 +120,39 @@ input[type="submit"]:hover {
   100% {
     opacity: 0.4;
   }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  background-color: #5a5af3;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 1rem;
+  width: auto;
+  height: 40px;
+  border-radius: 10px
+}
+
+.btn-primary:hover {
+  background-color: #3945ff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: #5a5af3;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background-color: #3945ff;
 }

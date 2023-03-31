@@ -6,57 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checking for Fraudster's</title>
+  <link href="{% static 'img/machine-learning.png' %}" rel="icon">
     <link href="{% static 'css/form_style.css' %}" rel="stylesheet">
 
 
 </head>
 <body>
     <header>
-      <div class="header-content">
-        <h1>Healthcare Fraud Detection App</h1>
-        <p>Check if a healthcare claim is fraudulent using machine learning</p>
-      </div>
+        <div class="header-content">
+          <h1>Healthcare Fraud Detection App</h1>
+          <p>Check if a healthcare claim is fraudulent using machine learning</p>
+        </div>
     </header>
-
+    
+    
+    
     <main>
         {% if result %}
-          <div class="result-container">
-            <h2>Result</h2>
-            {% if result == "Fraud" %}
-              <!-- <p class="fraudulent">{{ result }}</p> -->
-              <p class="result-p">Class you're trying to classify is</p>
-              <p class="not-fraudulent">Fraudulent</p>
-            {% else %}
-                <p class="result-p">Class you're trying to classify is</p>
-                <p class="not-fraudulent">Not Fraudulent</p>
-            {% endif %}
-          </div>
+            <div class="result-container">
+                <h2>Result</h2>
+                {% if result == "Fraud" %}
+                    <!-- <p class="fraudulent">{{ result }}</p> -->
+                    <p class="result-p">Class you're trying to classify is</p>
+                    <p class="fraudulent">Fraudulent</p>
+                {% else %}
+                    <p class="result-p">Class you're trying to classify is</p>
+                    <p class="not-fraudulent">Not Fraudulent</p>
+                {% endif %}
+                <div class="button-container">
+                    <a href=""><button class="btn btn-primary">Check Again !!</button></a>
+                    <a href="/"><button class="btn btn-secondary">Homepage</button></a>
+                </div>
+            </div>
         {% endif %}
-      <form action="" method="POST">
-        {% csrf_token %}
-        <label for="input1">Number of Services:</label>
-        <input type="number" name="input1" id="input1" required>
 
-        <label for="input2">Number of Medicare Beneficiaries:</label>
-        <input type="number" name="input2" id="input2" required>
+    
+        {% if not result %}
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="input1">Number of Services:</label>
+                <input type="number" name="input1" id="input1" required>
 
-        <label for="input3">Number of Distinct Medicare Beneficiary Per Day Services:</label>
-        <input type="number" name="input3" id="input3" required>
+                <label for="input2">Number of Medicare Beneficiaries:</label>
+                <input type="number" name="input2" id="input2" required>
 
-        <label for="input4">Average Medicare Allowed Amount:</label>
-        <input type="number" name="input4" id="input4" required>
+                <label for="input3">Number of Distinct Medicare Beneficiary Per Day Services:</label>
+                <input type="number" name="input3" id="input3" required>
 
-        <label for="input5">Average Submitted Charge Amount:</label>
-        <input type="number" name="input5" id="input5" required>
+                <label for="input4">Average Medicare Allowed Amount:</label>
+                <input type="number" name="input4" id="input4" required>
 
-        <label for="input6">Average Medicare Payment Amount:</label>
-        <input type="number" name="input6" id="input6" required>
+                <label for="input5">Average Submitted Charge Amount:</label>
+                <input type="number" name="input5" id="input5" required>
 
-        <label for="input7">Average Medicare Standardized Amount:</label>
-        <input type="number" name="input7" id="input7" required>
+                <label for="input6">Average Medicare Payment Amount:</label>
+                <input type="number" name="input6" id="input6" required>
 
-        <input type="submit" value="Check">
-      </form>
+                <label for="input7">Average Medicare Standardized Amount:</label>
+                <input type="number" name="input7" id="input7" required>
+
+                <label for="input8">Potential Profit Margin:</label>
+                <input type="number" name="input8" id="input8" required>
+
+                <input type="submit" value="Check">
+            </form>
+        {% endif %}
 
     </main>
 </body>
