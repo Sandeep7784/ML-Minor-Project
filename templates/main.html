@@ -45,28 +45,28 @@
             <form action="" method="POST">
                 {% csrf_token %}
                 <label for="input1">Number of Services:</label>
-                <input type="number" name="input1" id="input1" required>
+                <input type="number" step='0.1' name="input1" id="input1" required>
 
                 <label for="input2">Number of Medicare Beneficiaries:</label>
-                <input type="number" name="input2" id="input2" required>
+                <input type="number" step='0.1' name="input2" id="input2" required>
 
                 <label for="input3">Number of Distinct Medicare Beneficiary Per Day Services:</label>
-                <input type="number" name="input3" id="input3" required>
+                <input type="number" step='0.1' name="input3" id="input3" required>
 
                 <label for="input4">Average Medicare Allowed Amount:</label>
-                <input type="number" name="input4" id="input4" required>
+                <input type="number" step='0.1' name="input4" id="input4" required>
 
                 <label for="input5">Average Submitted Charge Amount:</label>
-                <input type="number" name="input5" id="input5" required>
+                <input type="number" step='0.1' name="input5" id="input5" required>
 
                 <label for="input6">Average Medicare Payment Amount:</label>
-                <input type="number" name="input6" id="input6" required>
+                <input type="number" step='0.1' name="input6" id="input6" required>
 
                 <label for="input7">Average Medicare Standardized Amount:</label>
-                <input type="number" name="input7" id="input7" required>
+                <input type="number" step='0.1' name="input7" id="input7" required>
 
                 <label for="input8">Potential Profit Margin:</label>
-                <input type="number" name="input8" id="input8" required>
+                <input type="number" step='0.1' name="input8" id="input8" required>
 
                 <input type="submit" value="Check">
             </form>

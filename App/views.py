@@ -3,7 +3,7 @@ from sklearn.preprocessing import OrdinalEncoder
 from sklearn.preprocessing import StandardScaler
 
 from joblib import load
-model = load('./savedModels/model_rishav.joblib')
+model = load('./savedModels/model_rishav_aich.joblib')
 
 def predictor(request):
     if request.method == 'POST':
